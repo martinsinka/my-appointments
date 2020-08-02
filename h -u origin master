@@ -1,0 +1,11 @@
+[33mcommit b3059b751d5f18677b826740140b835ef105cd20[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: martin <sinkamartins@gmail.com>
+Date:   Sat Aug 1 22:46:05 2020 -0400
+
+    Specialty CRUD
+
+[33mcommit 7782642e36e5eaa1b40645541214cd9b7a8e08cd[m
+Author: martin <sinkamartins@gmail.com>
+Date:   Fri Jul 31 00:38:06 2020 -0400
+
+    Base Project

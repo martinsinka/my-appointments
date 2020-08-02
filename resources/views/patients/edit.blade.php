@@ -6,10 +6,10 @@
     <div class="card-header border-0">
         <div class="row align-items-center">
             <div class="col">
-                <h3 class="mb-0">Nuevo medico</h3>
+                <h3 class="mb-0">Editar paciente</h3>
             </div>
             <div class="col text-right">
-                <a href="{{ url('doctors') }}" class="btn btn-sm btn-default">Cancelar y volver</a>
+                <a href="{{ url('patients') }}" class="btn btn-sm btn-default">Cancelar y volver</a>
             </div>
         </div>
     </div>
@@ -23,32 +23,33 @@
         </div>
     </ul>
     @endif
-        <form action="{{ url('doctors') }}" method="POST">
+        <form action="{{ url('patients/' . $patient->id) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="form-group">
-                <label for="name">Nombre del medico</label>
-                <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+                <label for="name">Nombre del paciente</label>
+                <input type="text" name="name" class="form-control" value="{{ old('name', $patient->name ) }}" required>
             </div>
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="text" name="email" class="form-control" value="{{ old('email') }}" required>
+                <input type="text" name="email" class="form-control" value="{{ old('email', $patient->email ) }}" required>
             </div>
             <div class="form-group">
                 <label for="dni">DNI</label>
-                <input type="text" name="dni" class="form-control" value="{{ old('dni') }}">
+                <input type="text" name="dni" class="form-control" value="{{ old('dni', $patient->dni ) }}">
             </div>
             <div class="form-group">
                 <label for="address">Direccion</label>
-                <input type="text" name="address" class="form-control" value="{{ old('address') }}">
+                <input type="text" name="address" class="form-control" value="{{ old('address', $patient->address ) }}">
             </div>
             <div class="form-group">
                 <label for="phone">Telefono</label>
-                <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
+                <input type="text" name="phone" class="form-control" value="{{ old('phone', $patient->phone ) }}">
             </div>
             <div class="form-group">
                 <label for="phone">Contrasena</label>
-                <input type="text" name="password" class="form-control" value="{{ Str::random(6) }}" 
-                    required>
+                <input type="text" name="password" class="form-control" value="">
+                <p>Ingrese un valor solo si desea modificar la contrasena.</p>
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
